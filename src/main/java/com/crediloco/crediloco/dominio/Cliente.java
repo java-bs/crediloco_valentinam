@@ -1,14 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package com.crediloco.crediloco.dominio;
 
-/**
- *
- * @author moscato
- */
+// utilizo 'implements' en lugar de 'extends'
 public class Cliente implements ImprimirDatos {
     
     // Atributos
@@ -36,7 +29,7 @@ public class Cliente implements ImprimirDatos {
      this.prestamos = prestamos;
     }
     
-    // Implementación de la interfaz
+    // Implementación del método imprimirDatos() declarado en la interfaz ImprimirDatos
     @Override
     public void imprimirDatos(){
         System.out.println("Impresión: " + "número de cuenta bancaria = " + cuentaBancaria + ", DNI = " + dni + ", ingresos = " + ingresos + ". Color de impresión: " + COLORSECUNDARIO);

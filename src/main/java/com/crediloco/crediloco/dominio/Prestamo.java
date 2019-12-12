@@ -3,6 +3,7 @@ package com.crediloco.crediloco.dominio;
 
 import java.math.BigDecimal;
 
+// utilizo 'implements' en lugar de 'extends'
 public class Prestamo implements ImprimirDatos {
 
     //Atributos
@@ -13,10 +14,10 @@ public class Prestamo implements ImprimirDatos {
     private double tasa;
     private byte[] documentos;
 
-    // Implementación de la interfaz
+    // Implementación del método imprimirDatos() declarado en la interfaz ImprimirDatos
     @Override
     public void imprimirDatos(){
-        System.out.println("Impresión: " + "monto del préstamo = " + monto + ", plazo = " + plazoEnMeses + ", cantidad de cuotas = " + cantidadDeCuotas + ". Color de impresión: " + COLORDEFAULT + ". En impresora: " + nombreDeImpresora);
+        System.out.println("Impresión: " + "monto del préstamo = " + monto + ", plazo = " + plazoEnMeses + ", cantidad de cuotas = " + cantidadDeCuotas + ". Color de impresión: " + COLORDEFAULT );
     };
     
     Prestamo(Banco banco, BigDecimal monto, int cantidadDeCuotas){
