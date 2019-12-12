@@ -29,7 +29,7 @@ public class Main {
 
         //uso de constructor de Cliente
         //como no hay setter del nombre, una vez que lo creo no lo puedo cambiar
-        Cliente cliente = new Cliente("José");
+        Cliente cliente = new Cliente("José", 123, "17555555", 1900.00);
 
         PrestamoPersonal miTercerPrestamoPersonal = new PrestamoPersonal(bancoSaenz, elMonto, 30);
         miTercerPrestamoPersonal.setSituacionVeraz("AA");
@@ -39,7 +39,8 @@ public class Main {
             miTercerPrestamoPersonal};
         //asignacion de prestamos al cliente
         cliente.setPrestamos(prestamosDelCliente);
-
+        cliente.imprimirDatos();
+        miTercerPrestamoPersonal.imprimirDatos();
         //cliente.getPrestamos()[2] = miPrimerPrestamo;
         //cliente.getPrestamos().length;
         System.out.println("Prestamo creado: " + miPrimerPrestamo);

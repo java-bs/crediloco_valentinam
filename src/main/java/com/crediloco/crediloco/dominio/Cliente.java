@@ -12,25 +12,34 @@ package com.crediloco.crediloco.dominio;
 public class Cliente implements ImprimirDatos {
     
     // Atributos
+    private String nombre;
     private int cuentaBancaria;
     private String domicilio;
     private String dni;
     private byte dniDigitalizado;
     private double ingresos;
-    private int prestamos[];
+    private Prestamo[] prestamos;
     
-    Cliente(int cuentaBancaria, String domicilio, String dni, byte dniDigitalizado, double ingresos, int[] prestamos){
+    // Constructores
+    public Cliente(String nombre, int cuentaBancaria, String dni, double ingresos){
+        this.nombre = nombre;
+        this.cuentaBancaria = cuentaBancaria;
+        this.dni = dni;
+        this.ingresos = ingresos;
+    }
+    
+    public Cliente(String nombre, int cuentaBancaria, String domicilio, String dni, double ingresos, Prestamo[] prestamos){
      this.cuentaBancaria = cuentaBancaria;
      this.domicilio = domicilio;
      this.dni = dni;
-     this.dniDigitalizado = dniDigitalizado;
      this.ingresos = ingresos;
      this.prestamos = prestamos;
     }
     
     // Implementación de la interfaz
-    public void imprimirDatos(Cliente cliente){
-        System.out.println("Impresión: " + "número de cuenta bancaria = " + cliente.getCuentaBancaria() + ", DNI = " + cliente.getDNI() + ", ingresos = " + cliente.getIngresos() + ". Color de impresión: " + COLORSECUNDARIO);
+    @Override
+    public void imprimirDatos(){
+        System.out.println("Impresión: " + "número de cuenta bancaria = " + cuentaBancaria + ", DNI = " + dni + ", ingresos = " + ingresos + ". Color de impresión: " + COLORSECUNDARIO);
     }
     
 
@@ -75,11 +84,11 @@ public class Cliente implements ImprimirDatos {
         this.ingresos = ingresos;
     }
     
-    public int[] getPrestamos(){
+    public Prestamo[] getPrestamos(){
         return prestamos;
     }
     
-    public void setPrestamos(int[] prestamos){
+    public void setPrestamos(Prestamo[] prestamos){
         this.prestamos = prestamos;
     }
     

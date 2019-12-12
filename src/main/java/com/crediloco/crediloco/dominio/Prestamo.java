@@ -1,43 +1,45 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package com.crediloco.crediloco.dominio;
 
-/**
- *
- * @author moscato
- */
+import java.math.BigDecimal;
+
 public class Prestamo implements ImprimirDatos {
 
     //Atributos
-    private double monto;
+    private Banco banco;
+    private BigDecimal monto;
     private int plazoEnMeses;
     private int cantidadDeCuotas;
     private double tasa;
     private byte[] documentos;
 
     // Implementación de la interfaz
-    public void imprimirDatos(Prestamo prestamo){
-        System.out.println("Impresión: " + "monto del préstamo = " + prestamo.getMonto() + ", plazo = " + prestamo.getPlazoEnMeses() + ", cantidad de cuotas = " + prestamo.getCantidadDeCuotas() + ". Color de impresión: " + COLORDEFAULT);
-    }
-
-    Prestamo(double monto, int plazoEnMeses, int cantidadDeCuotas, double tasa, byte[] documentos) {
+    @Override
+    public void imprimirDatos(){
+        System.out.println("Impresión: " + "monto del préstamo = " + monto + ", plazo = " + plazoEnMeses + ", cantidad de cuotas = " + cantidadDeCuotas + ". Color de impresión: " + COLORDEFAULT + ". En impresora: " + nombreDeImpresora);
+    };
+    
+    Prestamo(Banco banco, BigDecimal monto, int cantidadDeCuotas){
+        this.banco = banco;
+        this.monto = monto;
+        this.cantidadDeCuotas = cantidadDeCuotas;
+    };
+    
+    Prestamo(Banco banco, BigDecimal monto, int plazoEnMeses, int cantidadDeCuotas, double tasa, byte[] documentos) {
+        this.banco = banco;
         this.monto = monto;
         this.plazoEnMeses = plazoEnMeses;
         this.cantidadDeCuotas = cantidadDeCuotas;
         this.tasa = tasa;
         this.documentos = documentos;
-
     }
 
     // Getters & Setters
-    public double getMonto() {
+    public BigDecimal getMonto() {
         return monto;
     }
 
-    public void setMonto(double monto) {
+    public void setMonto(BigDecimal monto) {
         this.monto = monto;
     }
 

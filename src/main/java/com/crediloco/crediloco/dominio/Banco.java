@@ -20,7 +20,9 @@ public class Banco {
         }
     }
 
+    
     //metódo perteneciente al objeto creado (la instancia)
+    @Override
     public String toString() {
         return "Banco{" + "codigo=" + codigo + '}';
     }
