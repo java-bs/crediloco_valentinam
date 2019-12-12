@@ -9,7 +9,7 @@ package com.crediloco.crediloco.dominio;
  *
  * @author moscato
  */
-public class Cliente {
+public class Cliente implements ImprimirDatos {
     
     // Atributos
     private int cuentaBancaria;
@@ -28,6 +28,12 @@ public class Cliente {
      this.prestamos = prestamos;
     }
     
+    // Implementación de la interfaz
+    public void imprimirDatos(Cliente cliente){
+        System.out.println("Impresión: " + "número de cuenta bancaria = " + cliente.getCuentaBancaria() + ", DNI = " + cliente.getDNI() + ", ingresos = " + cliente.getIngresos() + ". Color de impresión: " + COLORSECUNDARIO);
+    }
+    
+
     // Getters & Setters
     public int getCuentaBancaria(){
         return cuentaBancaria;

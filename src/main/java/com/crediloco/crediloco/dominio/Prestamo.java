@@ -9,7 +9,7 @@ package com.crediloco.crediloco.dominio;
  *
  * @author moscato
  */
-public class Prestamo {
+public class Prestamo implements ImprimirDatos {
 
     //Atributos
     private double monto;
@@ -18,12 +18,18 @@ public class Prestamo {
     private double tasa;
     private byte[] documentos;
 
+    // Implementación de la interfaz
+    public void imprimirDatos(Prestamo prestamo){
+        System.out.println("Impresión: " + "monto del préstamo = " + prestamo.getMonto() + ", plazo = " + prestamo.getPlazoEnMeses() + ", cantidad de cuotas = " + prestamo.getCantidadDeCuotas() + ". Color de impresión: " + COLORDEFAULT);
+    }
+
     Prestamo(double monto, int plazoEnMeses, int cantidadDeCuotas, double tasa, byte[] documentos) {
         this.monto = monto;
         this.plazoEnMeses = plazoEnMeses;
         this.cantidadDeCuotas = cantidadDeCuotas;
         this.tasa = tasa;
         this.documentos = documentos;
+
     }
 
     // Getters & Setters
